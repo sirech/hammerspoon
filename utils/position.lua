@@ -92,6 +92,16 @@ function position.full(d)
     }
 end
 
+-- Center padded
+function position.center_pad(d)
+    return {
+        x = d.w / 8,
+        y = d.h / 8,
+        h = (d.h / 4) * 3,
+        w = (d.w / 4) * 3
+    }
+end
+
 -- Left 1/3rd.
 function position.left_third(d)
     return {
@@ -136,6 +146,16 @@ end
 function position.right_two_thirds(d)
     return {
         x = d.x + (d.w / 3),
+        y = d.y,
+        h = d.h,
+        w = (d.w / 3) * 2
+    }
+end
+
+
+function position.middle_two_thirds(d)
+    return {
+        x = d.x + (d.w / 6),
         y = d.y,
         h = d.h,
         w = (d.w / 3) * 2

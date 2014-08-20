@@ -13,7 +13,7 @@ local function get_window(arrangement_table)
     end
 
     if arrangement_table.title ~= nil then
-        return find.window.by_title(arrangement_table.app_title)
+        return find.window.by_title(arrangement_table.title)
     end
 
     error("Arrangement table needs: app_title or title to be set")
@@ -86,7 +86,7 @@ local function handle_arrangement(arrangement)
     arrange(arrangement.arrangement)
 
     if arrangement.alert == true then
-        alert.show("Arranged monitors with: " .. (arrangement.name or "unnamed arrangement"), 1.0)
+        alert.show("Arranged with profile: " .. (arrangement.name or "unnamed arrangement"), 1.0)
     end
 end
 

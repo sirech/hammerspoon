@@ -12,9 +12,11 @@ local function module_init()
         LEFT = "left",
         RIGHT = "right",
         SPACE = "full",
-        PAD7 = "left_third",
+        PAD7 = "top_left",
         PAD8 = "middle_third",
-        PAD9 = "right_third",
+        PAD9 = "top_right",
+        PAD3 = "bottom_right",
+        PAD1 = "bottom_left"
     })
 
     for key, position_string in pairs(keys) do
