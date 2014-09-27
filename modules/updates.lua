@@ -1,3 +1,6 @@
+local notify = require 'mjolnir._asm.notify'
+local hydra = require 'mjolnir._asm.hydra'
+local timer = require 'mjolnir._asm.timer'
 
 -- show available updates
 local function showupdate()

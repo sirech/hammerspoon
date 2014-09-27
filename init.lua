@@ -1,5 +1,7 @@
 -- Hi!
--- Save this as ~/.hydra/init.lua and choose Reload Config from the menu
+-- Save this as ~/.mjolnir/init.lua and choose Reload Config from the menu
+local hydra = require 'mjolnir._asm.hydra'
+local alert = require 'mjolnir.alert'
 
 import = require('utils/import')
 import.clear_cache()
@@ -30,40 +32,7 @@ for _, v in ipairs(config.modules) do
     table.insert(modules, module)
 end
 
-
-hydra.menu.show(function()
-
-    local menu = {
-        { title = "Reload Config", fn = hydra.reload },
-        { title = "-" }
-    }
-
-    local menus_inserted = 0
-
-    for _, module in ipairs(modules) do
-        if type(module.menu) == "function" then
-            fnutils.concat(menu, module.menu())
-            menus_inserted = menus_inserted + 1
-
-        elseif type(module.menu) == "table" then
-            fnutils.concat(menu, module.menu)
-            menus_inserted = menus_inserted + 1
-        end
-    end
-
-    if menus_inserted > 0 then
-        table.insert(menu, { title = "-" })
-    end
-
-    fnutils.concat(menu, {
-        { title = "About", fn = hydra.showabout },
-        { title = "Quit Hydra", fn = os.exit },
-    })
-
-    return menu
-end)
-
-hydra.autolaunch.set(config:get("autolaunch", false))
+hydra.autolaunch(config:get("autolaunch", false))
 
 local buf = {}
 
@@ -76,7 +45,7 @@ end
 
 table.insert(buf, "loaded " .. #modules .. " modules.")
 
-hydra.alert(table.concat(buf))
+alert.show(table.concat(buf))
 
 
 

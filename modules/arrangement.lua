@@ -1,3 +1,8 @@
+local alert = require 'mjolnir.alert'
+local notify = require 'mjolnir._asm.notify'
+local fnutils = require 'mjolnir.fnutils'
+local hotkey = require 'mjolnir.hotkey'
+
 local find = import('utils/find')
 local monitors = import('utils/monitors').configured_monitors
 local position = import('utils/position')
@@ -78,7 +83,7 @@ local function handle_arrangement(arrangement)
     arrange(arrangement.arrangement)
 
     if arrangement.alert == true then
-        hydra.alert("Arranged monitors with: " .. (arrangement.name or "unnamed arrangement"), 1.0)
+        alert.show("Arranged monitors with: " .. (arrangement.name or "unnamed arrangement"), 1.0)
     end
 end
 
