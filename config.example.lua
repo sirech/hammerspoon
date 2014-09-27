@@ -4,7 +4,6 @@ config.modules = {
     "arrangement",
     "monitors",
     "repl",
-    "updates",
     "reload",
     "arrows",
     "lock",
