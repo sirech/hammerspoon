@@ -59,8 +59,11 @@ local function arrange(arrangement)
                 end
 
             else
-
-                window:setframe(position[item_position](monitors[monitor].dimensions))
+                if position[item_position] == nil then
+                    alert.show("Unknown position: " .. item_position, 1.0)
+                else
+                    window:setframe(position[item_position](monitors[monitor].dimensions))
+                end
             end
 
         elseif type(item_position) == "function" then

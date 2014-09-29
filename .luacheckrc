@@ -1,2 +1,2 @@
-std = "lua52"
+std = "min"
 globals = { "import", "config", "mjolnir" }
