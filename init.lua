@@ -38,12 +38,12 @@ local buf = {}
 
 if hydra.was_loaded == nil then
     hydra.was_loaded = true
-    table.insert(buf, "Hydra loaded: ")
+    table.insert(buf, "Mjolnir loaded: ")
 else
-    table.insert(buf, "Hydra re-loaded: ")
+    table.insert(buf, "Mjolnir re-loaded: ")
 end
 
-table.insert(buf, "loaded " .. #modules .. " modules.")
+table.insert(buf, #modules .. " modules.")
 
 alert.show(table.concat(buf))
 
