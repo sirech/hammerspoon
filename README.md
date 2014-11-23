@@ -8,6 +8,7 @@ A more modular and config for [Hammerspoon](http://www.hammerspoon.org/) based o
 ```
 git clone git@github.com:tstirrat/hammerspoon-config.git ~/.hammerspoon
 
+cd ~/.hammerspoon
 cp config.example.lua config.lua
 ```
 
