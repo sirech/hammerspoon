@@ -1,23 +1,12 @@
-mjolnir-config
-==============
+hammerspoon-config
+==================
 
-A more modular and extensible take on a [Mjolnir](https://github.com/sdegutis/mjolnir) configuration.
+A more modular and config for [Hammerspoon](http://www.hammerspoon.org/) based on https://github.com/jhgg/Hydra-Config.
 
 #### Installing
 
 ```
-git clone git@github.com:jhgg/Hydra-Config.git ~/.mjolnir
-
-luarocks install mjolnir.hotkey
-luarocks install mjolnir.window
-luarocks install mjolnir.alert
-luarocks install mjolnir._asm.hydra
-luarocks install mjolnir._asm.pathwatcher
-luarocks install mjolnir._asm.data
-luarocks install mjolnir._asm.notify
-luarocks install mjolnir._asm.timer
-luarocks install mjolnir._asm.hydra.applescript
-luarocks install mjolnir.jstevenson.cursor
+git clone git@github.com:tstirrat/hammerspoon-config.git ~/.hammerspoon
 
 cp config.example.lua config.lua
 ```
@@ -28,7 +17,6 @@ cp config.example.lua config.lua
  * `init.lua` - The bootstrapper that loads modules defined in the config, and handles the menu.
 
 ### Utils
-I've written a few utilities to take care of some general purpose functionality:
 
  * `utils/find.lua` - Convenience methods for finding windows, and audio devices.
  * `utils/import.lua` - My own take of require() with its own cache. Use `import` everywhere you would have used `require`. `init.lua` takes care of clearing the cache, each reload, so you don't have to worry.
@@ -40,11 +28,9 @@ I've written a few utilities to take care of some general purpose functionality:
  * `utils/music/*.lua` - Utility functions for controlling Spotify, iTunes and Rdio.
 
 ### Modules
-A few modules to handle stuff I needed mjolnir to do:
 
-* `modules/reload.lua` - Handles reloading mjolnir. (CMD-CTRL-ALT-E)
+* `modules/reload.lua` - Handles reloading hammerspoon. (CMD-CTRL-ALT-E)
 * `modules/repl.lua` - Handles launching the repl. (CMD-CTRL-ALT-R)
-* ~~`modules/updates.lua` - Handles checking for updates.~~ Not compatible with Mjolnir
 * `modules/lock.lua` - Handles locking the screen. (F13)
 * `modules/arrows.lua` - Handles positioning a window on the current screen. (CMD-CTRL-ALT-<Arrow>)
 * `modules/monitors.lua` - Handles moving windows between screens.

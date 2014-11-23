@@ -1,5 +1,5 @@
-local fnutils = require 'mjolnir.fnutils'
-local screen = require 'mjolnir.screen'
+local fnutils = require 'hs.fnutils'
+local screen = require 'hs.screen'
 
 local dimensions__proto = {}
 local dimensions__mt = { __index = dimensions__proto }
@@ -51,7 +51,7 @@ end
 local function get_screen_dimensions(screen)
 
     local dim = screen:frame()
-    local frame = screen:fullframe()
+    local frame = screen:fullFrame()
 
     local dimensions = {
         w = dim.w,
@@ -71,7 +71,7 @@ local function get_screen_dimensions(screen)
 end
 
 local function get_screen_dimensions_at_index(index)
-    local screen = screen.allscreens()[index]
+    local screen = screen.allScreens()[index]
     if screen == nil then
         error("Cannot find screen with index " .. index)
     end
@@ -80,21 +80,21 @@ local function get_screen_dimensions_at_index(index)
 end
 
 local function autodiscover_monitors(rows)
-    local screens = screen.allscreens()
+    local screens = screen.allScreens()
     local primary_screen = fnutils.find(screens, function(screen)
-        local dim = screen:fullframe()
+        local dim = screen:fullFrame()
         return dim.x == 0 and dim.y == 0
     end)
     local screen_table = {}
-    local reference_screen_frame = primary_screen:fullframe()
+    local reference_screen_frame = primary_screen:fullFrame()
 
     for _ = 1, rows do
         local monitors_in_row = fnutils.filter(screens, function(screen)
-            return screen:fullframe().y == reference_screen_frame.y
+            return screen:fullFrame().y == reference_screen_frame.y
         end)
 
         table.sort(monitors_in_row, function(a, b)
-            return a:fullframe().x < b:fullframe().x
+            return a:fullFrame().x < b:fullFrame().x
         end)
 
         fnutils.concat(screen_table, monitors_in_row)

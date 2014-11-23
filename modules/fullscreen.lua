@@ -1,5 +1,5 @@
-local hotkey = require 'mjolnir.hotkey'
-local window = require 'mjolnir.window'
+local hotkey = require 'hs.hotkey'
+local window = require 'hs.window'
 
 local function module_init()
     local mash = config:get('fullscreen.mash', { "cmd", "ctrl" })
@@ -8,7 +8,7 @@ local function module_init()
     hotkey.bind(mash, key, function()
         local win = window.focusedwindow()
         if win ~= nil then
-            win:setfullscreen(not win:isfullscreen())
+            win:setfullscreen(not win:isFullScreen())
         end
     end)
 end

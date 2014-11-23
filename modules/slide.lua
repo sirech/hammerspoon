@@ -1,5 +1,5 @@
-local hotkey = require 'mjolnir.hotkey'
-local window = require 'mjolnir.window'
+local hotkey = require 'hs.hotkey'
+local window = require 'hs.window'
 
 local nudge = import('utils/nudge')
 
@@ -21,15 +21,15 @@ local function module_init()
         end
 
         hotkey.bind(mash, key, function()
-            local win = window.focusedwindow()
+            local win = window.focusedWindow()
             if win == nil then
                 return
             end
 
-            local dimensions = win:focusedwindow():frame()
+            local dimensions = win:focusedWindow():frame()
             local newframe = nudge_fn(dimensions)
 
-            win:setframe(newframe)
+            win:setFrame(newframe)
         end)
     end
 end

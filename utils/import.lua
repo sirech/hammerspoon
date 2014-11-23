@@ -1,9 +1,9 @@
 -- A convenience function that loads a file, reloading it each time this function is called. Searches
 -- LUA_PATH like require does, but uses dofile to do the loading, making sure not to cache anything.
 --
--- Useful for our purposes, where we'll have additional files that we want to be reloaded each time hydra.reload
+-- Useful for our purposes, where we'll have additional files that we want to be reloaded each time hs.reload
 -- is called.
-local hydra = require 'mjolnir._asm.hydra'
+local fs = require 'hs.fs'
 
 local import = {}
 
@@ -39,9 +39,9 @@ function import.import(name)
 
     for path in string.gmatch(package.path, "[^;]+") do
         local file = path:gsub("?", name)
-        local exists, is_dir = hydra.fileexists(file)
+        local attr = fs.attributes(file, "mode")
 
-        if exists and not is_dir then
+        if attr == "file" then
             local module = dofile(file)
             cache[name] = module
 

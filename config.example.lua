@@ -13,10 +13,8 @@ config.modules = {
 -- Maps monitor id -> screen index.
 config.monitors = {
     autodiscover = true,
-    rows = 2
+    rows = 1
 }
-
-config.autolaunch = true
 
 -- Window arrangements.
 config.arrangements = {

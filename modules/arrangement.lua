@@ -1,7 +1,7 @@
-local alert = require 'mjolnir.alert'
-local notify = require 'mjolnir._asm.notify'
-local fnutils = require 'mjolnir.fnutils'
-local hotkey = require 'mjolnir.hotkey'
+local alert = require 'hs.alert'
+local notify = require 'hs.notify'
+local fnutils = require 'hs.fnutils'
+local hotkey = require 'hs.hotkey'
 
 local find = import('utils/find')
 local monitors = import('utils/monitors').configured_monitors
@@ -43,38 +43,38 @@ local function arrange(arrangement)
             error("monitor " .. monitor .. " does not exist")
         end
 
-        local win_full = window:isfullscreen()
+        local win_full = window:isFullScreen()
 
         if item_position ~= "full_screen" and win_full then
-                    window:setfullscreen(false)
+            window:setFullScreen(false)
         end
 
         if type(item_position) == "string" then
 
             if item_position == "full_screen" then
-                window:setframe(monitors[monitor].dimensions.f)
+                window:setFrame(monitors[monitor].dimensions.f)
 
                 if not win_full then
-                    window:setfullscreen(true)
+                    window:setFullScreen(true)
                 end
 
             else
                 if position[item_position] == nil then
                     alert.show("Unknown position: " .. item_position, 1.0)
                 else
-                    window:setframe(position[item_position](monitors[monitor].dimensions))
+                    window:setFrame(position[item_position](monitors[monitor].dimensions))
                 end
             end
 
         elseif type(item_position) == "function" then
-            window:setframe(monitors[monitor].dimensions:relative_to(item_position(monitors[monitor].dimensions, {
+            window:setFrame(monitors[monitor].dimensions:relative_to(item_position(monitors[monitor].dimensions, {
                 monitor = monitors[monitor],
                 window = window,
                 position = position
             })))
 
         elseif type(item_position) == "table" then
-            window:setframe(monitors[monitor].dimensions:relative_to(item_position))
+            window:setFrame(monitors[monitor].dimensions:relative_to(item_position))
 
         else
             error("position cannot be a " .. type(item_position))

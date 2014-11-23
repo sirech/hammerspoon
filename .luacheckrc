@@ -1,2 +1,2 @@
 std = "min"
-globals = { "import", "config", "mjolnir" }
+globals = { "import", "config", "hs" }

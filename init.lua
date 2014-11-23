@@ -1,7 +1,4 @@
--- Hi!
--- Save this as ~/.mjolnir/init.lua and choose Reload Config from the menu
-local hydra = require 'mjolnir._asm.hydra'
-local alert = require 'mjolnir.alert'
+local alert = require 'hs.alert'
 
 import = require('utils/import')
 import.clear_cache()
@@ -32,15 +29,13 @@ for _, v in ipairs(config.modules) do
     table.insert(modules, module)
 end
 
-hydra.autolaunch(config:get("autolaunch", false))
-
 local buf = {}
 
-if hydra.was_loaded == nil then
-    hydra.was_loaded = true
-    table.insert(buf, "Mjolnir loaded: ")
+if hs.wasLoaded == nil then
+    hs.wasLoaded = true
+    table.insert(buf, "Hammerspoon loaded: ")
 else
-    table.insert(buf, "Mjolnir re-loaded: ")
+    table.insert(buf, "Hammerspoon re-loaded: ")
 end
 
 table.insert(buf, #modules .. " modules.")

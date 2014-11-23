@@ -1,5 +1,5 @@
-local hotkey = require 'mjolnir.hotkey'
-local window = require 'mjolnir.window'
+local hotkey = require 'hs.hotkey'
+local window = require 'hs.window'
 
 local function module_init()
     local mash = config:get("hop.mash", { "cmd", "ctrl", "alt", "shift" })
@@ -11,7 +11,8 @@ local function module_init()
     })
 
     for key, direction_string in pairs(keys) do
-        local fn = window['focuswindow_' .. direction_string]
+        local direction = direction_string:sub(1,1):upper()..direction_string:sub(2)
+        local fn = window['focusWindow' .. direction]
         if fn == nil then
             error("The direction must be one of north, south, east, or west. Not " .. direction_string)
         end

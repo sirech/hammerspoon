@@ -1,5 +1,5 @@
-local hotkey = require 'mjolnir.hotkey'
-local window = require 'mjolnir.window'
+local hotkey = require 'hs.hotkey'
+local window = require 'hs.window'
 
 local position = import('utils/position')
 local monitors = import('utils/monitors')
@@ -36,7 +36,7 @@ local function module_init()
             local dimensions = monitors.get_screen_dimensions(screen)
             local newframe = position_fn(dimensions)
 
-            win:setframe(newframe)
+            win:setFrame(newframe)
         end)
 
     end

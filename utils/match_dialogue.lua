@@ -1,5 +1,5 @@
-local fnutils = require 'mjolnir.fnutils'
-local utf8 = require('mjolnir._asm.data').utf8
+local fnutils = require 'hs.fnutils'
+local utf8 = require 'hs.utf8_53'
 
 local fuzzy_matcher = import('utils/matchers/fuzzy')
 local contains_matcher = import('utils/matchers/contains')
@@ -192,14 +192,19 @@ function match_dialogue__proto:update()
     self:__redraw()
 end
 
+function utf8_chars(str)
+    t = {} ; str:gsub(utf8.charPattern, function(c) t[#t+1] = c end)
+    return t
+end
+
 function match_dialogue__proto:match_and_score(needle)
     local matches = {}
-    needle = utf8.chars(needle:lower())
+    needle = utf8_chars(needle:lower())
 
     for _, data in ipairs(self.data_to_match) do
 
         if data._haystack_utf8 == nil then
-            data._haystack_utf8 = utf8.chars(data.string:lower())
+            data._haystack_utf8 = utf8_chars(data.string:lower())
         end
 
         local match_indexes = self.opts.matching_fn(needle, data._haystack_utf8)
@@ -225,7 +230,7 @@ end
 function match_dialogue__proto:fill_drawbuf_with_current_match()
     self:clear_drawbuf()
     local match = self.matches[self.current_match_index]
-    local chars = utf8.chars(match.data.string)
+    local chars = utf8_chars(match.data.string)
 
     for i = 1, #chars do
         table.insert(self.drawbuf, {

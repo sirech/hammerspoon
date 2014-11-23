@@ -1,10 +1,10 @@
-local hydra = require 'mjolnir._asm.hydra'
-local fnutils = require 'mjolnir._asm'
+local applescript = require 'hs.applescript'
+local fnutils = require 'hs.fnutils'
 
 local interface = {}
 
 function interface:tell(cmd)
-    local success, result = hydra.runapplescript('tell application "' .. self.app_name .. '" to ' .. cmd)
+    local success, result = applescript.applescript('tell application "' .. self.app_name .. '" to ' .. cmd)
     return success and result or nil
 end
 

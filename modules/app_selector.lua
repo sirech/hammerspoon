@@ -1,15 +1,15 @@
-local hotkey = require 'mjolnir.hotkey'
-local window = require 'mjolnir.window'
-local mouse = require 'mjolnir.jstevenson.cursor'
+local hotkey = require 'hs.hotkey'
+local window = require 'hs.window'
+local mouse = require 'hs.mouse'
+local geometry = require 'hs.geometry'
 
 local match_dialgoue = import('utils/match_dialogue')
-local geom = import('utils/geometry')
 
 local function module_init()
     local function match_data_source()
         local results = {}
 
-        for _, win in ipairs(window.allwindows()) do
+        for _, win in ipairs(window.allWindows()) do
             local title = win:title()
 
             if title:len() > 0 then
@@ -26,7 +26,7 @@ local function module_init()
         match.window:focus()
 
         if config:get('app_selector.move_mouse', true) then
-            local center = geom.rect_midpoint(match.window:frame())
+            local center = geometry.rectMidPoint(match.window:frame())
             mouse.set(center)
         end
     end
