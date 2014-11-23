@@ -33,7 +33,7 @@ cp config.example.lua config.lua
 * `modules/reload.lua` - Handles reloading hammerspoon. (CMD-CTRL-ALT-E)
 * `modules/repl.lua` - Handles launching the repl. (CMD-CTRL-ALT-R)
 * `modules/lock.lua` - Handles locking the screen. (F13)
-* `modules/arrows.lua` - Handles positioning a window on the current screen. (CMD-CTRL-ALT-<Arrow>)
+* `modules/arrows.lua` - Handles positioning a window on the current screen. (CMD-CTRL-ALT-[Arrow])
 * `modules/monitors.lua` - Handles moving windows between screens.
 * `modules/arrangement.lua` - Handles building window arrangements, that arrange windows on multiple screens. I use this to move windows to different monitors automatically.
 * `modules/app_selector.lua` - Focus windows by fuzzy matching their titles. Uses `utils/match_dialogue`.
