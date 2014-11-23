@@ -6,7 +6,7 @@ local function module_init()
     local key = config:get('fullscreen.key', "A")
 
     hotkey.bind(mash, key, function()
-        local win = window.focusedwindow()
+        local win = window.focusedWindow()
         if win ~= nil then
             win:setfullscreen(not win:isFullScreen())
         end

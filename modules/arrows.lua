@@ -27,7 +27,7 @@ local function module_init()
         end
 
         hotkey.bind(mash, key, function()
-            local win = window.focusedwindow()
+            local win = window.focusedWindow()
             if win == nil then
                 return
             end
