@@ -6,6 +6,7 @@ config.modules = {
     "repl",
     "reload",
     "arrows",
+    "lock",
     "fullscreen"
 }
 
