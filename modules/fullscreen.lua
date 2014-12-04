@@ -8,7 +8,7 @@ local function module_init()
     hotkey.bind(mash, key, function()
         local win = window.focusedWindow()
         if win ~= nil then
-            win:setfullscreen(not win:isFullScreen())
+            win:setFullScreen(not win:isFullScreen())
         end
     end)
 end
