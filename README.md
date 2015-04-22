@@ -6,7 +6,7 @@ A more modular and config for [Hammerspoon](http://www.hammerspoon.org/) based o
 #### Installing
 
 ```
-git clone git@github.com:tstirrat/hammerspoon-config.git ~/.hammerspoon
+git clone git@github.com:atsepkov/hammerspoon-config.git ~/.hammerspoon
 
 cd ~/.hammerspoon
 cp config.example.lua config.lua

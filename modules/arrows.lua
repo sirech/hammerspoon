@@ -6,14 +6,40 @@ local monitors = import('utils/monitors')
 
 local function module_init()
     local mash = config:get("arrows.mash", { "cmd", "ctrl", "alt" })
+    local combos = config:get("arrow.keys", {
+        DOWN = {
+            RIGHT = "bottom_right",
+            LEFT = "bottom_left",
+        },
+        UP = {
+            RIGHT = "top_right",
+            LEFT = "top_left",
+        },
+        RIGHT = {
+            DOWN = "bottom_right",
+            UP = "top_right",
+            LEFT = "full",
+        },
+        LEFT = {
+            DOWN = "bottom_left",
+            UP = "top_left",
+            RIGHT = "full",
+        },
+    })
+    local combos_ready = nil
+
     local keys = config:get("arrows.keys", {
         UP = "top",
         DOWN = "bottom",
         LEFT = "left",
         RIGHT = "right",
-        SPACE = "full",
+        -- SPACE = "full",
+        PAD8 = "top",
+        PAD2 = "bottom",
+        PAD4 = "left",
+        PAD6 = "right",
         PAD7 = "top_left",
-        PAD8 = "middle_third",
+        -- PAD8 = "middle_third",
         PAD9 = "top_right",
         PAD3 = "bottom_right",
         PAD1 = "bottom_left"
@@ -33,10 +59,22 @@ local function module_init()
             end
 
             local screen = win:screen()
+            local newframe
             local dimensions = monitors.get_screen_dimensions(screen)
-            local newframe = position_fn(dimensions)
+
+            local newframe
+            if combos_ready ~= nil then
+                local position_fn2 = position[combos_ready[key]]
+                newframe = position_fn2(dimensions)
+            elseif combos[key] ~= nil then
+                combos_ready = combos[key]
+                newframe = position_fn(dimensions)
+            end
 
             win:setFrame(newframe)
+        end,
+        function()
+            combos_ready = nil
         end)
 
     end
