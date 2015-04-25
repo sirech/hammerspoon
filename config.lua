@@ -1,7 +1,6 @@
 local config = {}
 
 config.modules = {
-    'app_selector',
     "arrangement",
     "monitors",
     "repl",
@@ -18,10 +17,6 @@ config.monitors = {
     autodiscover = true,
     rows = 1
 }
-
-local m1 = 1
-local m2 = 2
-local m3 = 3
 
 -- Window arrangements.
 local leader = {"cmd", "ctrl", "alt"};
@@ -80,7 +75,7 @@ config.arrangements = {
         arrangement = {
             {
                 app_title = "Outlook",
-                monitor = m1,
+                monitor = 1,
                 position = function(d)
                     local base = d:translate_from('right_two_thirds', {
                     })
@@ -92,12 +87,12 @@ config.arrangements = {
             },
             {
                 title = "Chrome",
-                monitor = m1,
+                monitor = 1,
                 position = "full_screen"
             },
             {
                 title = "Lync",
-                monitor = m1,
+                monitor = 1,
                 position = function(d)
                     local base =  d:translate_from('left_third', {
                     })

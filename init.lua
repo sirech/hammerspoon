@@ -51,12 +51,6 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
 end)
 --
 
--- Send click
-function clickEvent()
-    local mouseOrigin = hs.mouse.getAbsolutePosition()
-    hs.eventtap.leftClick(mouseOrigin)
-end
-
 -- Opens a new application window in the current space
 function bindNewWin(leader, key, appName, menuItemName)
   hs.hotkey.bind(leader, key, function()
