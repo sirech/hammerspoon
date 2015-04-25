@@ -43,10 +43,19 @@ table.insert(buf, #modules .. " modules.")
 alert.show(table.concat(buf))
 
 -- Hints!
+hs.hints.fontSize = 16
+hs.hints.style = 'vimperator'
+hs.hints.showTitleThresh = 10
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
     hs.hints.windowHints()
 end)
 --
+
+-- Send click
+function clickEvent()
+    local mouseOrigin = hs.mouse.getAbsolutePosition()
+    hs.eventtap.leftClick(mouseOrigin)
+end
 
 -- Opens a new application window in the current space
 function bindNewWin(leader, key, appName, menuItemName)

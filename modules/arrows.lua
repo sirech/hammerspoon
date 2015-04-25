@@ -64,10 +64,15 @@ local function module_init()
 
             local newframe
             if combos_ready ~= nil then
+                -- finish combo
                 local position_fn2 = position[combos_ready[key]]
                 newframe = position_fn2(dimensions)
             elseif combos[key] ~= nil then
+                -- start combo
                 combos_ready = combos[key]
+                newframe = position_fn(dimensions)
+            else
+                -- no combo
                 newframe = position_fn(dimensions)
             end
 
