@@ -71,6 +71,3 @@ function bindNewWin(leader, key, appName, menuItemName)
     hs.application.launchOrFocus(appName)
   end)
 end
-
-bindNewWin({ "cmd" }, "return", "iTerm", "New Window" )
-hs.hotkey.bind({ "cmd" }, 'T', function () hs.application.launchOrFocus("Trello X") end)
