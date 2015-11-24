@@ -19,8 +19,7 @@ config.monitors = {
 }
 
 -- Window arrangements.
-local leader = {"cmd", "ctrl", "alt"};
-
+local leader = {"cmd", "ctrl", "alt", "shift"};
 config.arrangements = {
     fuzzy_search = {
         mash = leader,
