@@ -20,6 +20,7 @@ config.monitors = {
 
 -- Window arrangements.
 local leader = {"cmd", "ctrl", "alt"};
+
 config.arrangements = {
     fuzzy_search = {
         mash = leader,
@@ -121,6 +122,10 @@ config.arrangements = {
 config.app_selector = {
     mash = leader,
     key = 'tab'
+}
+
+config.lock = {
+    mash = leader
 }
 
 return config

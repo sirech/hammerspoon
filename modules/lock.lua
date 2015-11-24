@@ -5,8 +5,7 @@ local function module_init()
     local key = config:get("lock.key", "L")
 
     hotkey.bind(mash, key, function()
-        -- os.execute("/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend")
-        os.execute("/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine")
+        hs.caffeinate.lockScreen()
     end)
 
 end
