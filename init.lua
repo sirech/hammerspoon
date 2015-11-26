@@ -46,7 +46,7 @@ alert.show(table.concat(buf))
 hs.hints.fontSize = 16
 hs.hints.style = 'vimperator'
 hs.hints.showTitleThresh = 10
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
+hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "F", function()
     hs.hints.windowHints()
 end)
 --
