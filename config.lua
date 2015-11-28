@@ -118,9 +118,14 @@ config.arrangements = {
     }
 }
 
+-- TODO: check why this does not work
 config.app_selector = {
     mash = leader,
     key = 'tab'
+}
+
+config.arrows = {
+    mash = leader
 }
 
 config.lock = {
