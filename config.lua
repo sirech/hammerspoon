@@ -132,4 +132,9 @@ config.lock = {
     mash = leader
 }
 
+config.fullscreen = {
+    mash = leader,
+    key = 'return'
+}
+
 return config
