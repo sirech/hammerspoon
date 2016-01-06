@@ -74,7 +74,7 @@ config.arrangements = {
         key = "1",
         arrangement = {
             {
-                app_title = "Outlook",
+                app_title = "Emacs",
                 monitor = 1,
                 position = function(d)
                     local base = d:translate_from('right_two_thirds', {
@@ -91,7 +91,7 @@ config.arrangements = {
                 position = "full_screen"
             },
             {
-                title = "Lync",
+                title = "Dash",
                 monitor = 1,
                 position = function(d)
                     local base =  d:translate_from('left_third', {
@@ -101,18 +101,13 @@ config.arrangements = {
                 end
             },
             {
-                app_title = "^ChronoMate",
-                monitor = 4,
+                app_title = "^iTerm",
+                monitor = 1,
                 position = function(d)
                     return d:translate_from('top_right', {
                         h = 42
                     })
                 end
-            },
-            {
-                app_title = "^Spotify",
-                monitor = 6,
-                position = "full_screen",
             }
         }
     }

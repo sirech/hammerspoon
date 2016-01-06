@@ -44,5 +44,5 @@ local function init_module()
 end
 
 return {
-    -- init = init_module
+    init = init_module
 }
