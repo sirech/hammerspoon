@@ -10,10 +10,12 @@ local function module_init()
         DOWN = {
             RIGHT = "bottom_right",
             LEFT = "bottom_left",
+            UP = "center_pad",
         },
         UP = {
             RIGHT = "top_right",
             LEFT = "top_left",
+            DOWN = "center_pad",
         },
         RIGHT = {
             DOWN = "bottom_right",
