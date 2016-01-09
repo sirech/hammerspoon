@@ -1,5 +1,8 @@
 local application = require "hs.application"
 local hotkey = require 'hs.hotkey'
+local window = require 'hs.window'
+local geometry = require 'hs.geometry'
+local mouse = require 'hs.mouse'
 
 local function module_init()
     triggers = {
@@ -19,6 +22,8 @@ local function module_init()
 
         hotkey.bind(mash, key, function()
                         application.launchOrFocus(applicationName)
+                        local midpoint = geometry.rectMidPoint(window.focusedWindow():frame())
+                        mouse.setAbsolutePosition(midpoint)
         end)
     end
 end

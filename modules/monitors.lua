@@ -11,7 +11,7 @@ local function init_module()
 
         hotkey.bind({ "cmd", "ctrl" }, "PAD" .. id, function()
             local midpoint = geometry.rectMidPoint(monitor.dimensions)
-            mouse.set(midpoint)
+            mouse.setAbsolutePosition(midpoint)
         end)
 
         hotkey.bind({ "cmd", "ctrl", "alt" }, "PAD" .. id, function()
