@@ -9,7 +9,8 @@ config.modules = {
     "lock",
     "fullscreen",
     "pomodoor",
-    "hop"
+    "hop",
+    "triggers"
 }
 
 -- Maps monitor id -> screen index.
@@ -127,9 +128,17 @@ config.lock = {
     mash = leader
 }
 
+config.reload = {
+    mash = leader
+}
+
 config.fullscreen = {
     mash = leader,
     key = 'return'
+}
+
+config.triggers = {
+    mash = leader
 }
 
 return config
