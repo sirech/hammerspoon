@@ -95,10 +95,10 @@ end
 -- Center padded
 function position.center_pad(d)
     return {
-        x = d.w / 8,
-        y = d.h / 8,
-        h = (d.h / 4) * 3,
-        w = (d.w / 4) * 3
+        x = d.x + (d.w / (3 * 2)),
+        y = d.y + (d.h / (3 * 2)),
+        h = (d.h / 3) * 2,
+        w = (d.w / 3) * 2
     }
 end
 
