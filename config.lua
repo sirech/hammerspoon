@@ -13,14 +13,17 @@ config.modules = {
     "triggers"
 }
 
+local leader = {"cmd", "ctrl", "alt", "shift"};
+
 -- Maps monitor id -> screen index.
 config.monitors = {
     autodiscover = true,
-    rows = 1
+    rows = 1,
+    mash = leader,
+    keys = { "w", "e", "q" }
 }
 
 -- Window arrangements.
-local leader = {"cmd", "ctrl", "alt", "shift"};
 config.arrangements = {
     fuzzy_search = {
         mash = leader,
