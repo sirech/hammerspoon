@@ -47,6 +47,7 @@ local function arrange(arrangement)
 
         if item_position ~= "full_screen" and win_full then
             window:setFullScreen(false)
+            os.execute("sleep 1")
         end
 
         if type(item_position) == "string" then
