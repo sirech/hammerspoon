@@ -8,8 +8,6 @@ config.modules = {
     "arrows",
     "lock",
     "fullscreen",
-    "pomodoor",
-    "hop",
     "triggers"
 }
 
@@ -100,6 +98,11 @@ config.fullscreen = {
 
 config.triggers = {
     mash = leader
+}
+
+config.repl = {
+    mash = leader,
+    key = '='
 }
 
 return config
