@@ -19,66 +19,76 @@ local function get_window(arrangement_table)
     error("Arrangement table needs: app_title or title to be set")
 end
 
+local function arrange_single(item, window)
+    local monitor = item.monitor
+    local item_position = item.position
+
+    if monitor == nil then
+        error("arrangement table does not have monitor")
+    end
+
+    if item_position == nil then
+        error("arrangement table does not have position")
+    end
+
+    if monitors[monitor] == nil then
+        error("monitor " .. monitor .. " does not exist")
+    end
+
+    local win_full = window:isFullScreen()
+
+    if item_position ~= "full_screen" and win_full then
+        window:setFullScreen(false)
+        os.execute("sleep 1")
+    end
+
+    if type(item_position) == "string" then
+
+        if item_position == "full_screen" then
+            window:setFrame(monitors[monitor].dimensions.f)
+
+            if not win_full then
+                window:setFullScreen(true)
+            end
+
+        else
+            if position[item_position] == nil then
+                alert.show("Unknown position: " .. item_position, 1.0)
+            else
+                window:setFrame(position[item_position](monitors[monitor].dimensions))
+            end
+        end
+
+    elseif type(item_position) == "function" then
+        window:setFrame(monitors[monitor].dimensions:relative_to(item_position(monitors[monitor].dimensions, {
+                                                                                   monitor = monitors[monitor],
+                                                                                   window = window,
+                                                                                   position = position
+        })))
+
+    elseif type(item_position) == "table" then
+        window:setFrame(monitors[monitor].dimensions:relative_to(item_position))
+
+    else
+        error("position cannot be a " .. type(item_position))
+    end
+end
 
 local function arrange(arrangement)
     fnutils.map(arrangement, function(item)
 
-        local window = get_window(item)
-        if window == nil then
-            return
-        end
-
-        local monitor = item.monitor
-        local item_position = item.position
-
-        if monitor == nil then
-            error("arrangement table does not have monitor")
-        end
-
-        if item_position == nil then
-            error("arrangement table does not have position")
-        end
-
-        if monitors[monitor] == nil then
-            error("monitor " .. monitor .. " does not exist")
-        end
-
-        local win_full = window:isFullScreen()
-
-        if item_position ~= "full_screen" and win_full then
-            window:setFullScreen(false)
-            os.execute("sleep 1")
-        end
-
-        if type(item_position) == "string" then
-
-            if item_position == "full_screen" then
-                window:setFrame(monitors[monitor].dimensions.f)
-
-                if not win_full then
-                    window:setFullScreen(true)
-                end
-
-            else
-                if position[item_position] == nil then
-                    alert.show("Unknown position: " .. item_position, 1.0)
-                else
-                    window:setFrame(position[item_position](monitors[monitor].dimensions))
-                end
+        if item.move_all then
+            local windows = find.windows.by_application_title(item.app_title)
+            for i, window in pairs(windows) do
+                arrange_single(item, window)
             end
-
-        elseif type(item_position) == "function" then
-            window:setFrame(monitors[monitor].dimensions:relative_to(item_position(monitors[monitor].dimensions, {
-                monitor = monitors[monitor],
-                window = window,
-                position = position
-            })))
-
-        elseif type(item_position) == "table" then
-            window:setFrame(monitors[monitor].dimensions:relative_to(item_position))
-
         else
-            error("position cannot be a " .. type(item_position))
+           local window = get_window(item)
+           if window == nil then
+               return
+           end
+
+           arrange_single(item, window)
         end
     end)
 end
