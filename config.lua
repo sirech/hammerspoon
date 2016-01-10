@@ -25,96 +25,54 @@ config.monitors = {
 
 -- Window arrangements.
 config.arrangements = {
-    fuzzy_search = {
-        mash = leader,
-        key = "Z"
-    },
     {
-        name = "zen",
+        name = "reset",
         alert = true,
         mash = leader,
-        key = "A",
-        arrangement = {
-            {
-                app_title = "^Mail",
-                monitor = 1,
-                position = "full_screen",
-            },
-            {
-                app_title = "^Slack",
-                monitor = 4,
-                position = "left"
-            },
-            {
-                app_title = "^Messages",
-                monitor = 4,
-                position = function(d)
-                    return d:translate_from('bottom_right', {
-                        y = 42,
-                        h = -40
-                    })
-                end
-            },
-            {
-                app_title = "^ChronoMate",
-                monitor = 4,
-                position = function(d)
-                    return d:translate_from('top_right', {
-                        h = 42
-                    })
-                end
-            },
-            {
-                app_title = "^Spotify",
-                monitor = 6,
-                position = "full_screen",
-            }
-        }
-    },
-    {
-        name = "docked",
-        alert = true,
-        mash = leader,
-        key = "1",
+        key = "U",
         arrangement = {
             {
                 app_title = "Emacs",
                 monitor = 1,
-                position = function(d)
-                    local base = d:translate_from('right_two_thirds', {
-                    })
-                    local strip = base['w']/4
-                    base['w'] = strip*5
-                    base['x'] = base['x'] - strip
-                    return base
-                end
+                position = "full"
             },
             {
-                title = "Chrome",
+                app_title = "iTerm",
                 monitor = 1,
-                position = "full_screen"
+                position = "full"
             },
             {
-                title = "Dash",
+                app_title = "Google Chrome",
                 monitor = 1,
-                position = function(d)
-                    local base =  d:translate_from('left_third', {
-                    })
-                    base['w'] = base['w']/2
-                    return base
-                end
+                position = "full",
+                move_all = true
             },
             {
-                app_title = "^iTerm",
+                app_title = "Chromium",
                 monitor = 1,
-                position = function(d)
-                    return d:translate_from('top_right', {
-                        h = 42
-                    })
-                end
+                position = "full",
+                move_all = true
+            },
+        }
+    },
+    {
+        name = "development",
+        alert = true,
+        mash = leader,
+        key = "I",
+        arrangement = {
+            {
+                app_title = "Emacs",
+                monitor = 1,
+                position = "full_screen",
+            },
+            {
+                app_title = "iTerm",
+                monitor = 2,
+                position = "full_screen",
             }
         }
-    }
+    },
 }
 
 config.arrows = {
