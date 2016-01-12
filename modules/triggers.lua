@@ -10,9 +10,9 @@ local function module_init()
         { "2", "iTerm"},
         { "3", "Google Chrome"},
         { "4", "Chromium"},
-        { "5", "Mail"},
-        { "6", "HipChat"},
-        { "7", "Calendar"},
+        { "M", "Mail"},
+        { "H", "HipChat"},
+        { "C", "Calendar"},
     }
 
     for _, trigger in ipairs(triggers) do
