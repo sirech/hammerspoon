@@ -13,6 +13,7 @@ local function module_init()
         { "M", "Mail"},
         { "H", "HipChat"},
         { "C", "Calendar"},
+        { "X", "xScope"},
     }
 
     for _, trigger in ipairs(triggers) do
