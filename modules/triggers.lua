@@ -14,6 +14,7 @@ local function module_init()
         { "H", "HipChat"},
         { "C", "Calendar"},
         { "X", "xScope"},
+        { "B", "Basecamp 3"}
     }
 
     for _, trigger in ipairs(triggers) do
