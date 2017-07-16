@@ -11,6 +11,7 @@ local function module_init()
         { "3", "Google Chrome"},
         { "4", "Chromium"},
         { "M", "Mail"},
+        { "N", "Mailplane 3"},
         { "H", "HipChat"},
         { "C", "Calendar"},
         { "X", "xScope"},
