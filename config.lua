@@ -8,7 +8,8 @@ config.modules = {
     "arrows",
     "lock",
     "fullscreen",
-    "triggers"
+    "triggers",
+    "mappings2"
 }
 
 local leader = {"cmd", "ctrl", "alt", "shift"};
