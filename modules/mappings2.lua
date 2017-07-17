@@ -42,7 +42,7 @@ function disableBinds(binds)
 end
 
 local browsers = { "Google Chrome", "Chromium", "Firefox", "Safari" }
-local apps = { "Finder", "KeePassX" }
+local apps = { "Finder", "KeePassX", "HipChat", "Preview", "Mailplane 3", "Calendar", "Mail" }
 
 return {
     init = function ()

@@ -1,15 +1,16 @@
 local config = {}
 
 config.modules = {
-    "arrangement",
+    -- "arrangement",
     "monitors",
     "repl",
     "reload",
     "arrows",
     "lock",
-    "fullscreen",
+    -- "fullscreen",
     "triggers",
-    "mappings2"
+    "mappings2",
+    -- "capslock"
 }
 
 local leader = {"cmd", "ctrl", "alt", "shift"};
