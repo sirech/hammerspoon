@@ -1,80 +1,81 @@
-local application = require 'hs.application'
-local hotkey = require 'hs.hotkey'
-local eventtap = require 'hs.eventtap'
+local wf = hs.window.filter
 
-local ignoredApps = function()
-    t = {}
-    t["Emacs"] = true
-    t["iTerm2"] = true
-    return t
+function remap (letter)
+    return hs.hotkey.new({"ctrl"}, letter, nil, function()
+            hs.eventtap.keyStroke({"cmd"}, letter)
+    end)
 end
 
-local browserApps = function()
-    t = {}
-    t["Google Chrome"] = true
-    t["Chromium"] = true
-    t["Firefox"] = true
-    t["Safari"] = true
-    return t
-end
+local copyPasteBinds = {
+    remap('C'),
+    remap('V'),
+    remap('X'),
+    remap('Z'),
+}
 
-local currentApp = function()
-    local app = application.frontmostApplication()
-    return app:title()
-end
+local interactionBinds = {
+    remap('S'),
+    remap('N'),
+    remap('T'),
+    remap('F'),
+    remap('G'),
+}
 
-local trigger = function(key)
-    eventtap.keyStroke({ 'cmd' }, key)
-end
+local browserBinds = {
+    remap('L'),
+    remap('D'),
+    remap('R'),
+}
 
-local conditionalTrigger = function(key, accepted, ignored)
-    local app = currentApp()
+local closeBinds = {
+    remap('W')
+}
 
-    if ignored[app] then
-        return
+function enableBinds(binds)
+    -- hs.console.printStyledtext("term focused")
+    for k,v in pairs(binds) do
+        v:enable()
     end
+end
 
-    if accepted and not accepted[app] then
-        return
+function disableBinds(binds)
+    -- hs.console.printStyledtext("term unfocused")
+    for k,v in pairs(binds) do
+        v:disable()
     end
-
-    trigger(key)
 end
 
-local rebind = function(key, accepted, ignored)
-    hotkey.bind({ "ctrl" }, key, nil, function() conditionalTrigger(key, accepted, ignored) end)
-end
+local browsers = { "Google Chrome", "Chromium", "Firefox", "Safari" }
+local apps = { "Finder", "KeePassX", "HipChat", "Preview", "Mailplane 3", "Calendar", "Mail", "Basecamp 3" }
 
 return {
-    init = function()
-        local ignored = ignoredApps()
-        local browsers = browserApps()
+    init = function ()
+        for k,v in pairs(browsers) do
+            local app = wf.new{v}
+            app:subscribe(wf.windowFocused, function()
+                                  enableBinds(browserBinds)
+                                  enableBinds(interactionBinds)
+                                  enableBinds(copyPasteBinds)
+                                  enableBinds(closeBinds)
+            end)
+            app:subscribe(wf.windowUnfocused, function()
+                                  disableBinds(browserBinds)
+                                  disableBinds(interactionBinds)
+                                  disableBinds(copyPasteBinds)
+                                  disableBinds(closeBinds)
+            end)
+        end
 
-        -- Copy / Paste
-        rebind("C", nil, ignored)
-        rebind("V", nil, ignored)
-        rebind("X", nil, ignored)
-
-        -- Save
-        rebind("S", nil, ignored)
-
-        -- New
-        rebind("N", nil, ignored)
-
-        -- New tab
-        rebind("T", nil, ignored)
-
-        -- Find
-        rebind("F", nil, ignored)
-        rebind("G", nil, ignored)
-
-        -- Close
-        rebind("W", nil, ignored)
-
-        -- Browser only
-        rebind("L", browsers, ignored)
-        rebind("D", browsers, ignored)
-        rebind("R", browsers, ignored)
-
+        for k,v in pairs(apps) do
+            local app = wf.new{v}
+            app:subscribe(wf.windowFocused, function()
+                                  enableBinds(interactionBinds)
+                                  enableBinds(copyPasteBinds)
+            end)
+            app:subscribe(wf.windowUnfocused, function()
+                                  disableBinds(interactionBinds)
+                                  disableBinds(copyPasteBinds)
+            end)
+        end
     end
 }

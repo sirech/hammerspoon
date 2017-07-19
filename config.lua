@@ -9,7 +9,7 @@ config.modules = {
     "lock",
     -- "fullscreen",
     "triggers",
-    "mappings2",
+    "mappings",
     -- "capslock"
 }
 
