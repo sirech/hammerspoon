@@ -64,7 +64,19 @@ local closeBinds = {
 }
 
 local browsers = { "Google Chrome", "Chromium", "Firefox", "Safari" }
-local apps = { "Finder", "KeePassX", "HipChat", "Preview", "Mailplane 3", "Calendar", "Mail", "Basecamp 3", "Notes" }
+local apps = {
+  "Basecamp 3",
+  "Calendar",
+  "Finder",
+  "HipChat",
+  "KeePassX",
+  "Mail",
+  "Mailplane 3",
+  "Notes",
+  "Numbers",
+  "Preview",
+  "SequelPro"
+}
 
 return {
     init = function ()
