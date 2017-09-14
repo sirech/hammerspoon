@@ -75,7 +75,8 @@ local apps = {
   "Notes",
   "Numbers",
   "Preview",
-  "SequelPro"
+  "SequelPro",
+  "Trello X"
 }
 
 return {
