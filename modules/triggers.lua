@@ -10,11 +10,14 @@ local function module_init()
         { "2", "iTerm"},
         { "3", "Google Chrome"},
         { "4", "Chromium"},
-        { "M", "Mail"},
-        { "N", "Mailplane 3"},
-        { "H", "HipChat"},
+        { "5", "Safari"},
+        { "M", "Mailplane 3"},
+        { "H", "YakYak"},
         { "C", "Calendar"},
         { "X", "xScope"},
+        { "T", "Whale"},
+        { "K", "KeePassX"},
+        { "N", "Notes"},
         { "B", "Basecamp 3"}
     }
 
