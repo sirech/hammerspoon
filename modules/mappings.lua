@@ -68,7 +68,6 @@ local apps = {
   "Basecamp 3",
   "Calendar",
   "Finder",
-  "HipChat",
   "KeePassX",
   "Mail",
   "Mailplane 3",
@@ -76,8 +75,9 @@ local apps = {
   "Numbers",
   "Preview",
   "SequelPro",
-  "Trello X"
-}
+  "YakYak",
+  "Whale"
+  }
 
 return {
     init = function ()
