@@ -75,8 +75,9 @@ local apps = {
   "Numbers",
   "Preview",
   "SequelPro",
-  "YakYak",
-  "Whale"
+  "VeraCrypt",
+  "Whale",
+  "YakYak"
   }
 
 return {

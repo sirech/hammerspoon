@@ -18,6 +18,7 @@ local function module_init()
         { "T", "Whale"},
         { "K", "KeePassX"},
         { "N", "Notes"},
+        { "I", "IntelliJ IDEA CE"},
         { "B", "Basecamp 3"}
     }
 
