@@ -64,6 +64,7 @@ local closeBinds = {
 }
 
 local browsers = { "Google Chrome", "Chromium", "Firefox", "Safari" }
+
 local apps = {
   "Basecamp 3",
   "Calendar",
@@ -76,9 +77,10 @@ local apps = {
   "Preview",
   "SequelPro",
   "VeraCrypt",
-  "Whale",
-  "YakYak"
+  "Whale"
   }
+
+local chats = { "HipChat", "YakYak", "Mattermost" }
 
 return {
     init = function ()
@@ -89,6 +91,11 @@ return {
         })
 
         activate(apps, { interactionBinds,
+                         copyPasteBinds,
+                         closeBinds
+        })
+
+        activate(chats, { interactionBinds,
                          copyPasteBinds,
                          closeBinds
         })

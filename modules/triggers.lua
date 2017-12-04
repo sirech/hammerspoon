@@ -13,12 +13,14 @@ local function module_init()
         { "5", "Safari"},
         { "M", "Mailplane 3"},
         { "H", "YakYak"},
+        { "J", "Mattermost"},
         { "C", "Google Calendar"},
         { "X", "xScope"},
         { "T", "Whale"},
         { "K", "KeePassX"},
         { "N", "Notes"},
         { "I", "IntelliJ IDEA CE"},
+        { "V", "Visual Studio Code"},
         { "B", "Basecamp 3"}
     }
 
