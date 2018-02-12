@@ -68,6 +68,7 @@ local browsers = { "Google Chrome", "Chromium", "Firefox", "Safari" }
 local apps = {
   "Basecamp 3",
   "Calendar",
+  "Google Calendar",
   "Finder",
   "KeePassX",
   "Mail",
