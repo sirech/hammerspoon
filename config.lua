@@ -6,7 +6,7 @@ config.modules = {
     "repl",
     "reload",
     "arrows",
-    "lock",
+    -- "lock",
     -- "fullscreen",
     "triggers",
     "mappings",
