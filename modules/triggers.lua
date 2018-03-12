@@ -13,15 +13,16 @@ local function module_init()
         { "5", "Safari"},
         { "M", "Mailplane 3"},
         { "H", "YakYak"},
-        { "J", "Mattermost"},
+        { "J", "Slack"},
         { "C", "Google Calendar"},
         { "X", "xScope"},
         { "T", "Whale"},
         { "K", "KeePassX"},
         { "N", "Notes"},
-        { "I", "IntelliJ IDEA CE"},
+        { "I", "IntelliJ IDEA"},
         { "V", "Visual Studio Code"},
-        { "B", "Basecamp 3"}
+        { "B", "Basecamp 3"},
+        { "G", "zoom.us" }
     }
 
     for _, trigger in ipairs(triggers) do

@@ -78,10 +78,10 @@ local apps = {
   "Preview",
   "SequelPro",
   "VeraCrypt",
-  "Whale"
+  "Whale",
   }
 
-local chats = { "HipChat", "YakYak", "Mattermost" }
+local chats = { "HipChat", "YakYak", "Mattermost", "Slack" }
 
 return {
     init = function ()
