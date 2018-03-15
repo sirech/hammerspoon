@@ -77,12 +77,6 @@ config.arrangements = {
 
 config.arrows = {
     mash = leader,
-    keys = {
-        UP = "top",
-        DOWN = "bottom",
-        LEFT = "left",
-        RIGHT = "right",
-    }
 }
 
 config.lock = {
