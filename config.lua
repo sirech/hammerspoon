@@ -17,10 +17,8 @@ local leader = {"cmd", "ctrl", "alt", "shift"};
 
 -- Maps monitor id -> screen index.
 config.monitors = {
-    autodiscover = true,
-    rows = 1,
     mash = leader,
-    keys = { "w", "e", "q" }
+    key = "e"
 }
 
 -- Window arrangements.
