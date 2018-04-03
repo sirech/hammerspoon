@@ -9,7 +9,7 @@ local function module_init()
         { "1", "Emacs"},
         { "2", "iTerm"},
         { "3", "Google Chrome"},
-        { "4", "Chromium"},
+        { "4", "/Applications/Chromium.app/Contents/MacOS/Chromium"},
         { "5", "Safari"},
         { "M", "Mailplane 3"},
         { "H", "YakYak"},
