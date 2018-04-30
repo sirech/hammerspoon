@@ -75,13 +75,14 @@ local apps = {
   "Mailplane 3",
   "Notes",
   "Numbers",
+  "Postman",
   "Preview",
   "SequelPro",
   "VeraCrypt",
   "Whale",
   }
 
-local chats = { "HipChat", "YakYak", "Mattermost", "Slack" }
+local chats = { "HipChat", "YakYak", "Mattermost", "Slack", "zoom.us" }
 
 return {
     init = function ()
