@@ -71,6 +71,7 @@ local apps = {
   "Google Calendar",
   "Finder",
   "KeePassX",
+  "KeePassXC",
   "Mail",
   "Mailplane 3",
   "Notes",
@@ -102,6 +103,6 @@ return {
                          closeBinds
         })
 
-        activate({ "KeePassX" }, {{ remap("B") }})
+        activate({ "KeePassX", "KeePassXC" }, {{ remap("B") }})
     end
 }

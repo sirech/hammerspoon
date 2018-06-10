@@ -17,7 +17,7 @@ local function module_init()
         { "C", "Google Calendar"},
         { "X", "xScope"},
         { "T", "Whale"},
-        { "K", "KeePassX"},
+        { "K", "KeePassXC"},
         { "N", "Notes"},
         { "I", "IntelliJ IDEA"},
         { "V", "Visual Studio Code"},
