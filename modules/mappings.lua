@@ -69,6 +69,7 @@ local apps = {
   "Basecamp 3",
   "Calendar",
   "Google Calendar",
+  "Google Mail",
   "Finder",
   "KeePassX",
   "KeePassXC",

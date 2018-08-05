@@ -11,7 +11,7 @@ local function module_init()
         { "3", "Google Chrome"},
         { "4", "/Applications/Chromium.app/Contents/MacOS/Chromium"},
         { "5", "Safari"},
-        { "M", "Mailplane 3"},
+        { "M", "Google Mail"},
         { "H", "YakYak"},
         { "J", "Slack"},
         { "C", "Google Calendar"},
