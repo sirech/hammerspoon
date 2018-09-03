@@ -63,7 +63,7 @@ local closeBinds = {
     remap('W')
 }
 
-local browsers = { "Google Chrome", "Chromium", "Firefox", "Safari" }
+local browsers = { "Google Chrome", "Chromium", "Firefox", "Safari", "Google Chrome Canary" }
 
 local apps = {
   "Basecamp 3",

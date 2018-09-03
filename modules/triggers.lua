@@ -11,6 +11,7 @@ local function module_init()
         { "3", "Google Chrome"},
         { "4", "/Applications/Chromium.app/Contents/MacOS/Chromium"},
         { "5", "Safari"},
+        { "6", "Google Chrome Canary" },
         { "M", "Google Mail"},
         { "H", "YakYak"},
         { "J", "Slack"},
