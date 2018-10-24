@@ -14,7 +14,7 @@ local function module_init()
         { "6", "Safari"},
         { "7", "Google Chrome Canary" },
         { "M", "Google Mail"},
-        { "H", "YakYak"},
+        { "H", "Chat"},
         { "J", "Slack"},
         { "C", "Google Calendar"},
         { "X", "xScope"},
