@@ -80,6 +80,7 @@ local apps = {
   "Postman",
   "Preview",
   "SequelPro",
+  "Sketchbook",
   "VeraCrypt",
   "Whale",
   }
