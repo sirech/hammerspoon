@@ -24,7 +24,8 @@ local function module_init()
         { "I", "IntelliJ IDEA"},
         { "V", "Visual Studio Code"},
         { "B", "Basecamp 3"},
-        { "G", "zoom.us" }
+        { "G", "zoom.us" },
+        { "P", "Postman" }
     }
 
     for _, trigger in ipairs(triggers) do
