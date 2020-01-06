@@ -70,6 +70,7 @@ local apps = {
   "Calendar",
   "Google Calendar",
   "Google Mail",
+  "Grammarly",
   "Finder",
   "KeePassX",
   "KeePassXC",
