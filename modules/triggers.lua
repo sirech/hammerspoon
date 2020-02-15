@@ -6,7 +6,7 @@ local mouse = require 'hs.mouse'
 
 local function module_init()
     triggers = {
-        { "1", "Emacs"},
+        { "1", "/Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_14"},
         { "2", "iTerm"},
         { "3", "Google Chrome"},
         { "4", "/Applications/Chromium.app/Contents/MacOS/Chromium"},
