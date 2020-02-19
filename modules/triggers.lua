@@ -25,7 +25,8 @@ local function module_init()
         { "V", "Visual Studio Code"},
         { "B", "Basecamp 3"},
         { "G", "zoom.us" },
-        { "P", "Postman" }
+        { "P", "Postman" },
+        { "U", "Microsoft Teams"}
     }
 
     for _, trigger in ipairs(triggers) do

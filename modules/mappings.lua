@@ -86,7 +86,7 @@ local apps = {
   "Whale",
   }
 
-local chats = { "HipChat", "YakYak", "Mattermost", "Slack", "zoom.us", "Chat" }
+local chats = { "HipChat", "YakYak", "Mattermost", "Slack", "zoom.us", "Chat", "Microsoft Teams" }
 
 return {
     init = function ()
