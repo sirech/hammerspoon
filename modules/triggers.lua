@@ -8,7 +8,7 @@ local function module_init()
     triggers = {
         { "1", "/Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_14"},
         { "2", "iTerm"},
-        { "3", "Google Chrome"},
+        { "3", "Brave Browser"},
         { "4", "/Applications/Chromium.app/Contents/MacOS/Chromium"},
         { "5", "firefox"},
         { "6", "Safari"},
