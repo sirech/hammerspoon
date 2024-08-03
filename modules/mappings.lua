@@ -68,14 +68,15 @@ local browsers = { "Google Chrome", "Chromium", "Firefox", "firefox", "Safari", 
 local apps = {
   "Basecamp 3",
   "Calendar",
+  "Finder",
   "Google Calendar",
   "Google Mail",
   "Grammarly",
-  "Finder",
   "KeePassX",
   "KeePassXC",
   "Mail",
   "Mailplane 3",
+  "Microsoft Outlook",
   "Notes",
   "Numbers",
   "Postman",
@@ -86,7 +87,7 @@ local apps = {
   "Whale",
   }
 
-local chats = { "HipChat", "YakYak", "Mattermost", "Slack", "zoom.us", "Chat", "Microsoft Teams" }
+local chats = { "HipChat", "YakYak", "Mattermost", "Slack", "zoom.us", "Chat", "Microsoft Teams", "Workplace Chat" }
 
 return {
     init = function ()
