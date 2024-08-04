@@ -15,11 +15,11 @@ local function module_init()
         { "M", "Microsoft Outlook"},
         { "H", "Workplace Chat"},
         { "C", "/Applications/Chrome Apps.localized/Calendar.app"},
-        { "T", "Whale"},
+        { "T", "/Applications/Chrome Apps.localized/Trello.app"},
         { "K", "KeePassXC"},
         { "N", "Notes"},
         { "I", "IntelliJ IDEA"},
-        { "V", "Visual Studio Code"},
+        { "V", "VS Code @ FB" },
         { "G", "zoom.us" },
     }
 
