@@ -63,7 +63,7 @@ local closeBinds = {
     remap('W')
 }
 
-local browsers = { "Google Chrome", "Chromium", "Firefox", "firefox", "Safari", "Google Chrome Canary", "Brave Browser" }
+local browsers = { "Google Chrome", "Chromium", "Firefox", "firefox", "Safari", "Google Chrome Canary", "Brave Browser", "Google Chrome Beta" }
 
 local apps = {
   "Basecamp 3",
@@ -87,7 +87,7 @@ local apps = {
   "Whale",
   }
 
-local chats = { "HipChat", "YakYak", "Mattermost", "Slack", "zoom.us", "Chat", "Microsoft Teams", "Workplace Chat" }
+local chats = { "HipChat", "YakYak", "Mattermost", "Slack", "zoom.us", "Chat", "Microsoft Teams", "Workplace Chat", "Workchat" }
 
 return {
     init = function ()

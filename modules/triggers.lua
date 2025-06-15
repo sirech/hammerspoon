@@ -8,7 +8,7 @@ local function module_init()
     triggers = {
         { "1", "Emacs"},
         { "2", "iTerm"},
-        { "3", "Google Chrome Canary"},
+        { "3", "Google Chrome Beta"},
         { "4", "Google Chrome"},
         { "5", "firefox"},
         { "6", "Safari"},
